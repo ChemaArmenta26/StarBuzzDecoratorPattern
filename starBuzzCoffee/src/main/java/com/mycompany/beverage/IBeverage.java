@@ -5,10 +5,24 @@
 package com.mycompany.beverage;
 
 /**
+ * La interfaz IBeverage define los métodos básicos que deben implementarse para
+ * representar una bebida. Cada bebida debe tener una descripción y un costo.
  *
- * @author PC
+ * @author Jose Maria Armenta Baca
  */
 public interface IBeverage {
+
+    /**
+     * Devuelve la descripción de la bebida.
+     *
+     * @return la descripción de la bebida.
+     */
     String getDescription();
+
+    /**
+     * Devuelve el costo de la bebida.
+     *
+     * @return el costo de la bebida.
+     */
     double getCost();
 }

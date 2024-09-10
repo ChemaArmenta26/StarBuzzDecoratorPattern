@@ -27,6 +27,10 @@ public class StarBuzzCoffee {
         List<IBeverage> bebidas = new ArrayList<>();
         boolean seguir = true;
 
+        /**
+         * Bucle que permite a los usuarios seguir agregando bebidas hasta que
+         * decidan finalizar el pedido.
+         */
         while (seguir) {
             IBeverage beverage = elegirBebida(scanner);
             beverage = agregarCondimentos(scanner, beverage);
@@ -41,11 +45,18 @@ public class StarBuzzCoffee {
             }
         }
 
-        // Al final, mostrar el pedido completo y el costo total
+        // Mostrar el resumen de todas las bebidas ordenadas y el costo total.
         mostrarResumen(bebidas);
         System.out.println("Gracias por tu pedido.");
     }
 
+    /**
+     * Este método permite al usuario seleccionar una bebida del menú
+     * disponible.
+     *
+     * @param scanner el objeto Scanner para capturar la entrada del usuario.
+     * @return una instancia de IBeverage que representa la bebida seleccionada.
+     */
     public static IBeverage elegirBebida(Scanner scanner) {
         System.out.println("Elige una bebida:");
         System.out.println("1. House Blend");
@@ -77,6 +88,15 @@ public class StarBuzzCoffee {
         return beverage;
     }
 
+    /**
+     * Este método permite al usuario agregar condimentos a la bebida
+     * seleccionada.
+     *
+     * @param scanner el objeto Scanner para capturar la entrada del usuario.
+     * @param beverage la bebida a la cual se le agregarán los condimentos.
+     * @return una instancia de IBeverage que representa la bebida con los
+     * condimentos agregados.
+     */
     public static IBeverage agregarCondimentos(Scanner scanner, IBeverage beverage) {
         boolean agregarCondimentos = true;
 
@@ -114,6 +134,12 @@ public class StarBuzzCoffee {
         return beverage;
     }
 
+    /**
+     * Muestra el resumen del pedido final, las bebidas y sus costos, así como
+     * el costo total del pedido.
+     *
+     * @param bebidas la lista de bebidas ordenadas por el usuario.
+     */
     public static void mostrarResumen(List<IBeverage> bebidas) {
         double total = 0.0;
 
